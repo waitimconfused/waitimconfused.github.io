@@ -1,4 +1,4 @@
-fetchFile("https://github.com/Dev-384/Dev-384.github.io/blob/main/pixlus.zip?raw=true");
+fetchFile("https://github.com/Dev-384/Dev-384.github.io/raw/main/zipped_up_Pixlus/pixlus.zip");
 
 function fetchFile(url) {
     fetch(url).then(res => res.blob()).then(file => {
