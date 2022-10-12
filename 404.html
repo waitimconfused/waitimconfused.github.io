@@ -2,6 +2,9 @@
 <html>
     <body>
     <h1>Hmm...</h1>
-    <p>The website: <code>Dev-284.github.io</code> Can't find the page you have requested</p>
+    <p>The website: <code id="url"></code> Can't find the page you have requested</p>
     </body>
+    <script>
+        document.getElementById("url").innerHTML = window.location
+    </script>
 </html>
