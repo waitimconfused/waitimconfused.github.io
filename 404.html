@@ -4,5 +4,7 @@
     <h1>Hmm...</h1>
     <p>The website: <code id="url"></code> Can't find the page you have requested</p>
     </body>
-    <script src="javascript/404.js"></script>
+    <script>
+        document.getElementById("url").innerHTML = window.location;
+    </script>
 </html>
