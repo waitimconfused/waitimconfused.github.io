@@ -1,6 +1,9 @@
-var install = document.getElementById("install");
+var download = document.getElementById("download");
 
-fetchFile("../pixlus.zip");
+
+download.onclick = function(){
+    fetchFile("../pixlus.zip");
+}
 
 function fetchFile(url) {
     alert("Running...")
