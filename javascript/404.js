@@ -1,3 +1,5 @@
+document.getElementById("url").innerHTML = window.location;
+
 if(window.location.includes("pixlus/install")){
     var install = document.getElementById("install");
 
