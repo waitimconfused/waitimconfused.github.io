@@ -1,5 +1,3 @@
-var install = document.getElementById("install");
-
 fetchFile("https://github.com/Dev-384/Dev-384.github.io/blob/main/pixlus.zip?raw=true");
 
 function fetchFile(url) {
