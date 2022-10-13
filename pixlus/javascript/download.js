@@ -5,7 +5,6 @@ download.onclick = function(){
 }
 
 function fetchFile(url) {
-    alert("Running...")
     fetch(url).then(res => res.blob()).then(file => {
         let tempUrl = URL.createObjectURL(file);
         const aTag = document.createElement("a");
