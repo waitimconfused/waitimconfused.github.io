@@ -1,6 +1,5 @@
 var download = document.getElementById("download");
 
-
 download.onclick = function(){
     fetchFile("../pixlus.zip");
 }
