@@ -19,5 +19,4 @@ if(window.location.includes("pixlus/install")){
             alert("Failed to download file.");
         });
     }
-    window.close();
 }
