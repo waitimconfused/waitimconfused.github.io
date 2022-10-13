@@ -1,7 +1,10 @@
 var download = document.getElementById("download");
 
 download.onclick = function(){
-    fetchFile("../pixlus.zip");
+    var versionRequest = window.location;
+    versionRequest -= "https://dev-384.github.io/pixlus/download?version=";
+    console.log(versionRequest);
+    fetchFile("../pixlus"+".zip");
 }
 
 function fetchFile(url) {
