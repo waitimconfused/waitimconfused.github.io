@@ -14,7 +14,6 @@ function fetchFile(url) {
         aTag.click();
         URL.revokeObjectURL(tempUrl);
         aTag.remove();
-        alert("Ran with no issues.")
     }).catch(() => {
         alert("Failed to download file!");
     });
