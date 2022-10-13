@@ -1,7 +1,6 @@
 var download = document.getElementById("download");
 
-download.onclick = function(){
-    var versionRequest = window.location.href;
+var versionRequest = window.location.href;
     var versionRequest = JSON.parse(
         versionRequest.replace(
             "https://"+window.location.hostname+"/pixlus/download?version=",
@@ -22,6 +21,8 @@ download.onclick = function(){
     var versionRequest = JSON.stringify(versionRequest);
     //     "1.1"
     console.log(versionRequest);
+
+download.onclick = function(){
     fetchFile("../zipped_up_Pixlus/pixlus-"+versionRequest+".zip");
 }
 
