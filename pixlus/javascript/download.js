@@ -1,10 +1,28 @@
 var download = document.getElementById("download");
 
 download.onclick = function(){
-    var versionRequest = window.location;
-    versionRequest = versionRequest.replace("https://dev-384.github.io/pixlus/download?version=","");
+    var versionRequest = window.location.href;
+    var versionRequest = JSON.parse(
+        versionRequest.replace(
+            "https://"+window.location.hostname+"/pixlus/download?version=",
+            ""
+        )
+    );
+    //     7401711273
+    var versionRequest = versionRequest / 1000;
+    //     7401711.273
+    var versionRequest = Math.floor(versionRequest);
+    //     7401711
+    var versionRequest = versionRequest / 100;
+    //     74017.11
+    var versionRequest = versionRequest - Math.floor(versionRequest);
+    //     0.11
+    var versionRequest = versionRequest *10;
+    //     1.1
+    var versionRequest = JSON.stringify(versionRequest);
+    //     "1.1"
     console.log(versionRequest);
-    fetchFile("../zipped_up_Pixlus/pixlus.zip");
+    fetchFile("../zipped_up_Pixlus/pixlus-"+versionRequest+".zip");
 }
 
 function fetchFile(url) {
@@ -21,3 +39,6 @@ function fetchFile(url) {
         alert("Failed to download file!");
     });
 }
+
+var orange = window.location.href;
+orange.replace("https://"+window.location.hostname+"/pixlus/download?version=","");
