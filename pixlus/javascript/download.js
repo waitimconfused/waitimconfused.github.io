@@ -2,7 +2,7 @@ var download = document.getElementById("download");
 
 download.onclick = function(){
     var versionRequest = window.location;
-    versionRequest -= "https://dev-384.github.io/pixlus/download?version=";
+    versionRequest = versionRequest.replace("https://dev-384.github.io/pixlus/download?version=","");
     console.log(versionRequest);
     fetchFile("../pixlus"+".zip");
 }
