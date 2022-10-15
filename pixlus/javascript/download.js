@@ -42,5 +42,4 @@ function fetchFile(url) {
     });
 }
 
-var orange = window.location.href;
-orange.replace("https://"+window.location.hostname+"/pixlus/download?version=","");
+window.close();
