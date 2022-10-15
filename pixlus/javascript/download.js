@@ -3,7 +3,7 @@ var download = document.getElementById("download");
 var versionRequest = window.location.hostname;
 var versionRequest = JSON.parse(
     versionRequest.replace(
-        "https://"+window.location.href+"pixlus/download?version=",
+        "https://"+versionRequest+"pixlus/download?version=",
         ""
     )
 );
