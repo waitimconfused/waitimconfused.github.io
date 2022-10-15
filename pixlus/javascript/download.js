@@ -25,9 +25,7 @@ var versionRequest = JSON.stringify(versionRequest);
 //     "1.1"
 console.log(versionRequest);
 
-download.onclick = function(){
-    fetchFile("../zipped_up_Pixlus/pixlus-"+versionRequest+".zip");
-}
+fetchFile("../zipped_up_Pixlus/pixlus-"+versionRequest+".zip");
 
 function fetchFile(url) {
     fetch(url).then(res => res.blob()).then(file => {
