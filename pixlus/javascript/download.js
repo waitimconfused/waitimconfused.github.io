@@ -1,5 +1,6 @@
 var download = document.getElementById("download");
 
+var versionRequest = window.location.href;
 var versionRequest = JSON.parse(
     versionRequest.replace(
         window.location.href+"?version=",
