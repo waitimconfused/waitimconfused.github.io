@@ -1,30 +1,28 @@
 var download = document.getElementById("download");
 
-var versionRequest = window.location.href;
+var versionRequest = JSON.parse(
+    versionRequest.replace(
+        window.location.href+"?version=",
+        ""
+    )
+);
+//     7401711273
+var versionRequest = versionRequest / 1000;
+//     7401711.273
+var versionRequest = Math.floor(versionRequest);
+//     7401711
+var versionRequest = versionRequest / 100;
+//     74017.11
+var versionRequest = versionRequest - Math.floor(versionRequest);
+//     0.11
+var versionRequest = versionRequest * 100;
+//     11
+var versionRequest = Math.floor(versionRequest);
+//     11
+var versionRequest = versionRequest / 10
+var versionRequest = JSON.stringify(versionRequest);
+//     "1.1"
 console.log(versionRequest);
-    var versionRequest = JSON.parse(
-        versionRequest.replace(
-            window.location.href+"?version=",
-            ""
-        )
-    );
-    //     7401711273
-    var versionRequest = versionRequest / 1000;
-    //     7401711.273
-    var versionRequest = Math.floor(versionRequest);
-    //     7401711
-    var versionRequest = versionRequest / 100;
-    //     74017.11
-    var versionRequest = versionRequest - Math.floor(versionRequest);
-    //     0.11
-    var versionRequest = versionRequest * 100;
-    //     11
-    var versionRequest = Math.floor(versionRequest);
-    //     11
-    var versionRequest = versionRequest / 10
-    var versionRequest = JSON.stringify(versionRequest);
-    //     "1.1"
-    console.log(versionRequest);
 
 download.onclick = function(){
     fetchFile("../zipped_up_Pixlus/pixlus-"+versionRequest+".zip");
