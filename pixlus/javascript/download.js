@@ -1,11 +1,9 @@
 var download = document.getElementById("download");
 
 var versionRequest = window.location.hostname;
-var versionRequest = JSON.parse(
-    versionRequest.replace(
-        "https://"+versionRequest+"pixlus/download?version=",
-        ""
-    )
+var versionRequest = versionRequest.replace(
+    "https://"+versionRequest+"pixlus/download?version=",
+    ""
 );
 //     7401711273
 var versionRequest = versionRequest / 1000;
