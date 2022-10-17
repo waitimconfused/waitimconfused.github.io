@@ -2,24 +2,29 @@ var download = document.getElementById("download");
 
 var versionRequest = window.location.hostname;
 var versionRequest = versionRequest.replace(
-    "https://"+versionRequest+"pixlus/download?version=",
-    ""
+        "https://"+versionRequest+"pixlus/download?version=",
+        ""
 );
-//     7401711273
-var versionRequest = versionRequest / 1000;
-//     7401711.273
-var versionRequest = Math.floor(versionRequest);
-//     7401711
-var versionRequest = versionRequest / 100;
-//     74017.11
-var versionRequest = versionRequest - Math.floor(versionRequest);
-//     0.11
-var versionRequest = versionRequest * 100;
-//     11
-var versionRequest = Math.floor(versionRequest);
-//     11
-var versionRequest = versionRequest / 10
-var versionRequest = JSON.stringify(versionRequest);
+//     "7401711273"
+var versionRequest = Math.floor(
+    (
+        (
+            (
+                Math.floor(
+                    (
+                        JSON.parse(
+                            '7401711273'
+                        ) / 1000
+                    )
+                ) / 100
+            ) - Math.floor(
+                JSON.parse(
+                    '7401711273'
+                ) / 100000
+            )
+        ) * 100
+    )
+) / 10;
 //     "1.1"
 console.log(versionRequest);
 
