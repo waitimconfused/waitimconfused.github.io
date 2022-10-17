@@ -45,4 +45,4 @@ function fetchFile(url) {
     });
 }
 
-window.close();
+//window.close();
