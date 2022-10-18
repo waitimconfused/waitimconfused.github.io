@@ -44,5 +44,3 @@ function fetchFile(url) {
         alert("Failed to download file!");
     });
 }
-
-window.close();
