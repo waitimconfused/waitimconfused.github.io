@@ -1,30 +1,17 @@
 var download = document.getElementById("download");
 
+let latestVersion = 1.1;
+
 var versionRequest = window.location.hostname;
-var versionRequest = versionRequest.replace(
+var versionRequest = JSON.parse(
+    versionRequest.replace(
         "https://"+versionRequest+"pixlus/download?version=",
         ""
-);
-//     "7401711273"
-var versionRequest = Math.floor(
-    (
-        (
-            (
-                Math.floor(
-                    (
-                        JSON.parse(
-                            '7401711273'
-                        ) / 1000
-                    )
-                ) / 100
-            ) - Math.floor(
-                JSON.parse(
-                    '7401711273'
-                ) / 100000
-            )
-        ) * 100
     )
-) / 10;
+);
+if(versionRequest === ''){
+    versionRequest = latestVersion;
+}
 //     "1.1"
 console.log(versionRequest);
 
