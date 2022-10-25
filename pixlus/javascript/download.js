@@ -9,8 +9,8 @@ var versionRequest = JSON.parse(
         ""
     )
 );
-if(versionRequest === ''){
-    versionRequest = latestVersion;
+if(versionRequest === 'auto'){
+    var versionRequest = latestVersion;
 }
 //     "1.1"
 console.log(versionRequest);
