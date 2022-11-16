@@ -26,8 +26,7 @@ var versionRequest = Math.floor(
 ) / 10;
 //     "1.1"
 console.log(versionRequest);
-
-fetchFile("../zipped_up_Pixlus/pixlus-"+versionRequest+".zip");
+fetchFile('zipped_up_Pixlus/pixlus-'+versionRequest+'.zip');
 
 function fetchFile(url) {
     fetch(url).then(res => res.blob()).then(file => {
@@ -40,6 +39,6 @@ function fetchFile(url) {
         URL.revokeObjectURL(tempUrl);
         aTag.remove();
     }).catch(() => {
-        alert("Failed to download file!");
+        alert("Failed to download file.");
     });
 }
