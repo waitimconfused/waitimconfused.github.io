@@ -5,6 +5,10 @@
         <link rel="stylesheet" href="style/latest-version.css">
     </head>
     <body>
-    <p>1.2</p>
+    <p>Latest version: <a id="version"></a></p>
     </body>
+    <script src="version.js"></script>
+    <script>
+        document.getElementsById("version").innerHTML = latestVersion;
+    </script>
 </html>
