@@ -12,13 +12,13 @@ var versionRequest = Math.floor(
                 Math.floor(
                     (
                         JSON.parse(
-                            '7401711273'
+                            versionRequest
                         ) / 1000
                     )
                 ) / 100
             ) - Math.floor(
                 JSON.parse(
-                    '7401711273'
+                    versionRequest
                 ) / 100000
             )
         ) * 100
