@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <h1>Downloading...</h1>
+    <p>
+        Please wait.<br>
+        The time it takes to download changes on how big the file is.
+    </p>
+    </body>
+    <script src="../version.js"></script>
+    <script>
+        fetchFile('zipped_up_Pixlus/pixlus-'+latestVersion+'.zip');
+
+        function fetchFile(url) {
+            fetch(url).then(res => res.blob()).then(file => {
+                let tempUrl = URL.createObjectURL(file);
+                const aTag = document.createElement("a");
+                aTag.href = tempUrl;
+                aTag.download = url.replace(/^.*[\\\/]/, '');
+                document.body.appendChild(aTag);
+                aTag.click();
+                URL.revokeObjectURL(tempUrl);
+                aTag.remove();
+            }).catch(() => {
+                alert("Failed to download file.");
+            });
+        }
+    </script>
+</html>
