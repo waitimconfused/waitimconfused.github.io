@@ -9,7 +9,7 @@
     </body>
     <script src="../version.js"></script>
     <script>
-        fetchFile('zipped_up_Pixlus/pixlus-'+latestVersion+'.zip');
+        fetchFile('../../zipped_up_Pixlus/pixlus-'+latestVersion+'.zip');
 
         function fetchFile(url) {
             fetch(url).then(res => res.blob()).then(file => {
