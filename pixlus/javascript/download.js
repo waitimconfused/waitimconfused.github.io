@@ -26,7 +26,7 @@ var versionRequest = Math.floor(
 ) / 10;
 //     "1.1"
 console.log(versionRequest);
-fetchFile('zipped_up_Pixlus/pixlus-'+versionRequest+'.zip');
+fetchFile('zipped_up_Pixlus/pixlus-1.1.zip');
 
 function fetchFile(url) {
     fetch(url).then(res => res.blob()).then(file => {
