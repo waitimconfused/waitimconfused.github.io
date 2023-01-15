@@ -22,8 +22,11 @@
                 URL.revokeObjectURL(tempUrl);
                 aTag.remove();
             }).catch(() => {
-                alert("Failed to download file.");
+                let msg = "Please send this error code to the Discord Server:\nERR_LATEST_REQUEST."+latestVersion.replaceAll(".","/");
+                alert(msg);
             });
+            history.back();
+            window.close();
         }
     </script>
 </html>
