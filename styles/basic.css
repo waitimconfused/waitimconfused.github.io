@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+body {
+    font-family: "Rubik";
+}
+a:link {
+    position: relative;
+    color: #0087ca;
+    text-decoration: none;
+}
+a:visited {
+    color: #0087ca;
+}
+a:link::before,a:link:after, a:link:visited::before,a:link:visited:after {
+    --border-size: 5px;
+    content: "";
+    margin: 0px;
+    padding: 0px;
+    z-index: 0;
+    position: absolute;
+    top: calc( var(--border-size) * -0.5 );
+    width: 100%;
+    transform: scale(0);
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    transition: all 400ms;
+    border-radius: 0.25rem;
+    border: var(--border-size) solid #0087ca;
+}
+a:link:hover::before, a:link:hover:after {
+    transform: scale(0.5);
+    transition: all 400ms cubic-bezier(.47,1.64,.41,.8);
+}
+a:link:before {
+    border-top: none;
+    border-right: none;
+    transform-origin: bottom left;
+}
+a:link:after {
+    border-bottom: none;
+    border-left: none;
+    transform-origin: top right;
+}
