@@ -1,2 +1,1 @@
-# pixlus
-## Version 1.1
+# DEV-384.github.io
