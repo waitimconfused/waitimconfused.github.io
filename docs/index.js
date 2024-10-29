@@ -103,3 +103,16 @@ themeChangeButton.addEventListener("click", () => {
 	let newTheme = (currentTheme == "light") ? "dark" : "light";
 	preferences.set("theme", newTheme);
 });
+
+const headers = document.getElementsByTagName("h2");
+
+for (let i = 0; i < headers.length; i ++) {
+	let header = headers.item(i);
+	let id = header.innerText.replace(/(\s)/, "_");
+	id = id.replace(/([^\w])/, "");
+	header.id = id;
+
+	header.addEventListener("click", () => {
+		window.location.href = "#" + header.id;
+	});
+}
