@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:700|Inter:400');
+
+:root:not([data-theme]),
+:root[data-theme="light"] {
+	--text: #031503;
+	--background: #fbfefb;
+	--primary: #27ce2c;
+	--secondary: #dcffdc;
+	--accent: #9cb7ee;
+}
+:root[data-theme="dark"] {
+	--text: #e9fce9;
+	--background: #010401;
+	--primary: #31d837;
+	--secondary: #002400;
+	--accent: #112d64;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: "Poppins";
+	font-weight: 700;
+}
+
+html {
+	font-size: 100%; /* 16px */;
+	scroll-behavior: smooth;
+}
+h1 {font-size: 4.210rem; /* 67.36px */}
+h2 {font-size: 3.158rem; /* 50.56px */}
+h3 {font-size: 2.369rem; /* 37.92px */}
+h4 {font-size: 1.777rem; /* 28.48px */}
+h5 {font-size: 1.333rem; /* 21.28px */}
+small {font-size: 0.750rem; /* 12px */}
+
+
+body {
+	font-family: "Inter";
+	font-weight: 400;
+
+	background-color: var(--background);
+	color: var(--text);
+	margin: 0px;
+	min-height: 100vh;
+	padding: 0 12%;
+	/* padding-top: calc(100vh); */
+}
+
+.theme-change {
+	top: 2rem;
+	right: 2rem;
+	z-index: 2147483647;
+	position: fixed;
+	user-select: none;
+	transition: scale, opacity;
+	transition-duration: 200ms;
+}
+.theme-change:hover {
+	scale: 1.1;	
+}
+.theme-change:active {
+	scale: 0.9;
+}
+.theme-change svg {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+	transition: rotate;
+	transition-duration: 200ms;
+}
+
+:root[data-theme="light"] .show-if-dark,
+:root:not([data-theme]) .show-if-dark {
+	display: none;
+}
+
+:root[data-theme="dark"] .show-if-light {
+	display: none;
+}
+
+.header-holder {
+	position: relative;
+	top: 0px;
+	left: -16%;
+	width: 100vw;
+	height: 100vh;
+	box-sizing: border-box;
+	-webkit-perspective: 240px;
+	perspective: 240px;
+	perspective-origin: top center;
+}
+header {
+	position: absolute;
+	top: 2rem;
+	left: 2rem;
+	width: calc(100% - 4rem);
+	height: calc(100vh - 4rem);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--secondary);
+	border-radius: 2rem;
+
+	animation-name: header-fade-out;
+	animation-duration: 1ms; /* Firefox requires this to apply the animation */
+	animation-direction: alternate;
+	animation-timeline: scroll();
+}
+
+@keyframes header-fade-out {
+	from {
+		top: 0rem;
+		left: 0rem;
+		width: 100%;
+		height: 100vh;
+		opacity: 1;
+		scale: 1;
+		transform: rotateX(0deg);
+		border-radius: 0px;
+	}
+	5% {
+		top: 2rem;
+		left: 2rem;
+		width: calc(100% - 4rem);
+		height: calc(100vh - 4rem);
+		border-radius: 2rem;
+	}
+	80%, to {
+		/* opacity: 0; */
+		scale: 0.75;
+		transform: rotateX(-10deg);
+	}
+}
+
+header .scroll-down {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	bottom: 2rem;
+	left: 50%;
+	translate: -50% 0;
+	width: 3rem;
+	height: 3rem;
+	background-color: var(--primary);
+	border-radius: 50%;
+}
+
+header .scroll-down svg {
+	width: 75%;
+	height: 75%;
+}
+
+[href],
+[onclick] {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1rem;
+	text-decoration: underline;
+	color: var(--primary);
+	cursor: pointer;
+}
+
+.button {
+	cursor: pointer;
+}
+
+/* width */
+::-webkit-scrollbar {
+	display: none;
+}

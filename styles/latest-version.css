@@ -1,9 +1,0 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
-html {
-    color: black;
-    mix-blend-mode: difference;
-    font-family: 'Archivo Black', sans-serif;
-    background-color: transparent;
-    width: max-content;
-    height: max-content;
-}
