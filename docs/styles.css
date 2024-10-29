@@ -246,11 +246,26 @@ h2:not(.no-style):hover::before {
 	border-radius: 3px;
 }
 
+.links:not(.no-style) {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	justify-content: flex-start;
+}
+.links:not(.no-style, :last-child) {
+	margin-bottom: 1rem;
+}
 .links a:not(.no-style, :last-child) {
 	position: relative;
 	--spacing: 3rem;
 	margin-right: var(--spacing);
 }
+
+.links a .icon:not(.no-style) {
+	width: 24px;
+	height: 24px;
+}
+
 
 .links a:not(.no-style, :last-child):after {
 	content: "";
