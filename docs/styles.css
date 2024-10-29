@@ -16,6 +16,21 @@
 	--accent: #112d64;
 }
 
+:root[data-theme="light"] {
+	--text: #012001;
+	--background: #f9faec;
+	--primary: #246046;
+	--secondary: #16b16e;
+	--accent: #ffffcc;
+}
+:root[data-theme="dark"] {
+	--text: #e1fee1;
+	--background: #131405;
+	--primary: #7ce7b9;
+	--secondary: #16593c;
+	--accent: #acac17;
+}
+
 h1, h2, h3, h4, h5 {
 	font-family: "Poppins";
 	font-weight: 700;
@@ -43,17 +58,31 @@ body {
 	margin: 0px;
 	min-height: 100vh;
 	padding: 0 12%;
-	/* padding-top: calc(100vh); */
+	padding-top: calc(100vh);
 }
 
-.theme-change {
+nav {
 	top: 2rem;
 	right: 2rem;
 	z-index: 2147483647;
 	position: fixed;
 	user-select: none;
+	display: inline-flex;
+	flex-direction: row;
+	gap: 1rem;
 	transition: scale, opacity;
 	transition-duration: 200ms;
+}
+nav .icon {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+}
+nav img.icon {
+	box-shadow: 0 0 0 2px var(--background);
+}
+.theme-change {
+	position: relative;
 }
 .theme-change:hover {
 	scale: 1.1;	
@@ -80,9 +109,9 @@ body {
 }
 
 .header-holder {
-	position: relative;
+	position: absolute;
 	top: 0px;
-	left: -16%;
+	left: 0px;
 	width: 100vw;
 	height: 100vh;
 	box-sizing: border-box;
@@ -94,11 +123,11 @@ header {
 	position: absolute;
 	top: 2rem;
 	left: 2rem;
-	width: calc(100% - 4rem);
+	width: calc(100vw - 4rem);
 	height: calc(100vh - 4rem);
 	display: flex;
 	flex-direction: column;
-	text-anchor: center;
+	text-align: center;
 	justify-content: center;
 	align-items: center;
 	background-color: var(--secondary);
@@ -112,24 +141,22 @@ header {
 
 @keyframes header-fade-out {
 	from {
-		top: 0rem;
-		left: 0rem;
-		width: 100%;
+		top: 0px;
+		left: 0px;
+		width: 100vw;
 		height: 100vh;
 		opacity: 1;
-		scale: 1;
 		transform: rotateX(0deg);
 		border-radius: 0px;
 	}
 	10% {
 		top: 2rem;
 		left: 2rem;
-		width: calc(100% - 4rem);
+		width: calc(100vw - 4rem);
 		height: calc(100vh - 4rem);
 		border-radius: 2rem;
 	}
 	80%, to {
-		/* opacity: 0; */
 		scale: 0.75;
 		transform: rotateX(-10deg);
 	}
@@ -175,7 +202,7 @@ header .scroll-down svg {
 }
 
 section:not(.no-style) {
-	padding: 2rem;
+	padding: 2rem 6%;
 	border-radius: 2rem;
 	background-color: color-mix(in srgb, var(--secondary), var(--background) 25%);
 	transform-origin: center center;
@@ -196,7 +223,7 @@ section:not(:last-child) {
 		translate: 0 100px;
 		opacity: 0;
 	}
-	25%, to {
+	20%, to {
 		scale: 1;
 		translate: 0 0px;
 		opacity: 1;
