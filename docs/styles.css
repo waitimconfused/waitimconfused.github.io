@@ -174,7 +174,7 @@ header .scroll-down svg {
 	display: none;
 }
 
-section {
+section:not(.no-style) {
 	padding: 2rem;
 	border-radius: 2rem;
 	background-color: color-mix(in srgb, var(--secondary), var(--background) 25%);
@@ -203,12 +203,12 @@ section:not(:last-child) {
 	}
 }
 
-h2 {
+h2:not(.no-style) {
 	position: relative;
 	margin-top: 2rem;
 	margin-bottom: 2rem;
 }
-h2:hover::before {
+h2:not(.no-style):hover::before {
 	content: "";
 	position: absolute;
 	top: 0px;
@@ -219,13 +219,13 @@ h2:hover::before {
 	border-radius: 3px;
 }
 
-.links a:not(:last-child) {
+.links a:not(.no-style, :last-child) {
 	position: relative;
 	--spacing: 3rem;
 	margin-right: var(--spacing);
 }
 
-.links a:not(:last-child):after {
+.links a:not(.no-style, :last-child):after {
 	content: "";
 	position: absolute;
 	--size: 3px;
@@ -234,8 +234,4 @@ h2:hover::before {
 	width: var(--size);
 	background-color: var(--text);
 	border-radius: calc( var(--size) / 2 );
-}
-
-summary:not(:first-child) {
-	margin-top: 1rem;
 }
